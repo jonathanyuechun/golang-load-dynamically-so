@@ -11,8 +11,12 @@ build-plugins:
 build-sdk:
 	go build -o ${BINARY_OUT} main.go
 
+.PHONY: run-binary
+
 run-binary: build-plugins build-sdk
 	$(BINARY_OUT)
+
+.PHONY: run
 
 run: build-plugins
 	go run main.go
